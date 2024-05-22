@@ -1,0 +1,7 @@
+For the sequential drug combination Camptothecin -> Epirubicin HCl in the setting ENV_FDA_MCF7_STEP2: 
+TREND RESULT
+ As the duration of Camptothecin administration increases, the efficacy of Epirubicin HCl exhibits (Increasing then decreasing then increasing) trend.
+The optimal time step of Camptothecin is observed between [3, 5]. 
+STATE RESULT
+ Results of pathway-associated cell state transitions: 
+NULL
