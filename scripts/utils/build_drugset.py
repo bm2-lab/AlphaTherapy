@@ -47,7 +47,7 @@ for i in valid_drug_ind:
     pathway = drug_info.loc[i,"Pathway"]
     drugset.append([new_ind, "_", drug, drug_fingerprint_dict[drug], target, pathway])
     new_ind+=1
-drugset = np.array(drugset)
+drugset = np.array(drugset, dtype=object)
 
 save_file = "./scripts/gym_cell_model/gym_cell_model/data/" + args.output
 with open(save_file, "wb") as f:
