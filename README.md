@@ -12,8 +12,9 @@ Users can create a scenario by customizing input parameters tailored to their sp
 * Python == 3.6.13
 * torch == 1.10.2
 * gym == 0.15.4
+* tensorboard == 2.2.2
 * rdkit == 2021.03.5
-* openpyxl, numpy, pandas, scipy, matplotlib, tensorboard, scikit-learn Python modules are also needed
+* openpyxl, numpy, pandas, scipy, matplotlib, scikit-learn Python modules are also needed
 *  R == 4.3.1
 *  clusterProfiler, org.Hs.eg.db, usefun R packages are also needed
 
