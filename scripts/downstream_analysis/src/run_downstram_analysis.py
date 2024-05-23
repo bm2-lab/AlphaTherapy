@@ -34,12 +34,13 @@ env = gym.make('gym_cell_model:ccl-env-cpd-v1', env_name=args.env_name)
 expression_simulate(args.env_name, drugA_index, env)
 
 # run enrich R script
-# command = ["Rscript", "enrich.R", args.env_name, str(drugA_index)]
-# process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+R_file = parent_dir + "/scripts/downstream_analysis/src/enrich.R"
+command = ["Rscript", R_file, args.env_name, str(drugA_index)]
+process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
 
-# stdout, stderr = process.communicate()
-# print("Enrich.R Standard Output:\n", stdout)
-# print("Enrich.R Standard Error:\n", stderr)
+stdout, stderr = process.communicate()
+print("Enrich.R Standard Output:\n", stdout)
+print("Enrich.R Standard Error:\n", stderr)
 
 # 3. downstream analysis
 # simulate SDE vectors
