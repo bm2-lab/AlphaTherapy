@@ -78,7 +78,6 @@ def output_aggregator(model_config_name):
     torch.manual_seed(rl_seed)     # 
     torch.cuda.manual_seed(rl_seed)    # 
 
-    print("error:", env_name)
     env = gym.make('gym_cell_model:ccl-env-cpd-v1', env_name=env_name)
     state_shape = env.observation_space.shape or env.observation_space.n
     action_shape = env.action_space.shape or env.action_space.n
