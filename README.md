@@ -88,8 +88,7 @@ Notably, we only add the information of the scenario to RL_agents.config. You al
 nohup python ./scripts/AlphaTherapy/model/train_RL_agents.py --drugset_short_name FDA --cell_line MCF7 --terminal_step 3 --max_workers 10 &
 ```
 
-**This command trains RL agents through interaction with the cell model. It will generate "policy.pth" files and "plot_test_data.csv" files within new directories like "./scripts/AlphaTherapy/working_log/ENV_FDA_MCF7_STEP2_SEED1". These files serve as records for model training, capturing all generated .pth files during runtime and the fluctuation of episodes throughout the process.
-**
+**This command trains RL agents through interaction with the cell model. It will generate "policy.pth" files and "plot_test_data.csv" files within new directories like "./scripts/AlphaTherapy/working_log/ENV_FDA_MCF7_STEP2_SEED1". These files serve as records for model training, capturing all generated .pth files during runtime and the fluctuation of episodes throughout the process.**
 
 **Parameters**
   * drugset_short_name, cell_line, terminal_step is the same as above.
