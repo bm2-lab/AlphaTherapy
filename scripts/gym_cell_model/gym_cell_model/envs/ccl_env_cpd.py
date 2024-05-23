@@ -23,7 +23,6 @@ class CCLEnvCPD(gym.Env):
         # 1. read configurations
         config = ConfigParser()
         config.read(self.current_dir + "/config/env_cpd.config", encoding="UTF-8")
-        print(env_name)
         self.cell_line = config[env_name].get('cell_line')
         self.drugset_file = config[env_name].get('drugset_file')
         self.drugset_file = self.current_dir + "/data/" + self.drugset_file
