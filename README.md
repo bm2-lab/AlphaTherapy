@@ -7,6 +7,22 @@ AlphaTherapy is a theoretical proof-of-concept AI framework for the rational des
 Users can create a scenario by customizing input parameters tailored to their specific problem related to sequential therapy (Methods). Specifically, AlphaTherapy is designed to investigate sequential drug treatments applicable for different scenarios, including for a specified cell line (parameter: cell line), for a specified treatment duration (parameter: termination step) and for a constrained sequential drug combination space (parameter: drug pool). 
 
 ## Table of contents
+- [AlphaTherapy](#alphatherapy)
+  - [Introduction](#introduction)
+  - [Table of contents](#table-of-contents)
+  - [Requirements](#requirements)
+  - [Installation from github](#installation-from-github)
+  - [Installation from Docker image](#installation-from-docker-image)
+  - [Usage](#usage)
+    - [1. Rational design of sequential drug treatments for tumors by AlphaTherapy](#1-rational-design-of-sequential-drug-treatments-for-tumors-by-alphatherapy)
+      - [1.1 Drug pool construction](#11-drug-pool-construction)
+      - [1.2 Write configurations](#12-write-configurations)
+      - [1.3 Run RL agents](#13-run-rl-agents)
+      - [1.4 Merge results](#14-merge-results)
+    - [2. Downstream analysis](#2-downstream-analysis)
+  - [Citation](#citation)
+  - [Contacts](#contacts)
+
 
 ## Requirements
 * Python == 3.6.13
