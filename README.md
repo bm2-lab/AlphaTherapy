@@ -122,7 +122,7 @@ python ./scripts/AlphaTherapy/model/output_result.py --drugset_short_name FDA --
 
 ### 2. Downstream analysis
 ```python
-python ./scripts/downstream_analysis/src/run_downstram_analysis.py --combos_file_name ENV_FDA_A375_STEP3.csv --env_name ENV_FDA_MCF7_STEP3 --drugA_name Hydroxyurea --drugB_name "ixantrone Maleate"
+python ./scripts/downstream_analysis/src/run_downstram_analysis.py --combos_file_name ENV_FDA_MCF7_STEP3.csv --env_name ENV_FDA_MCF7_STEP3 --drugA_name "Morin Hydrate" --drugB_name "Afatinib (BIBW2992)"
 ```
 **This command will run downstream analysis and save the results in file like in /output/downstream_analysis/."**
 
