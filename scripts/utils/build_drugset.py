@@ -16,7 +16,7 @@ args = argparser.parse_args()
 project_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # read drug information list
-drug_info = pd.read_excel("./data/" + args.input)
+drug_info = pd.read_excel("./data/" + args.input, engine="openpyxl")
 
 # convert drug smiles to fingerprint
 valid_drug_ind = []
