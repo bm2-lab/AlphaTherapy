@@ -52,7 +52,7 @@ def simulate_by_actions(action_ls, env):
 # Organize the output results
 def output_aggregator(model_config_name):
     config = ConfigParser()
-    config.read(project_dir + "/scripts/AlphaTherapy/config/dqn_FDA.config", encoding="UTF-8")
+    config.read(project_dir + "/scripts/AlphaTherapy/config/RL_agent.config", encoding="UTF-8")
 
     env_name = config[model_config_name]['env name']
     test_episode_num = config.getint(model_config_name, 'test episode num')
