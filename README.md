@@ -4,7 +4,7 @@
 
 AlphaTherapy is a theoretical proof-of-concept AI framework for the rational design of sequential drug treatments for tumors across diverse drugs and tumor types.
 
-Users can create a scenario by customizing input parameters tailored to their specific problem related to sequential therapy (Methods). Specifically, AlphaTherapy is designed to investigate sequential drug treatments applicable for different scenarios, including for a specified cell line (parameter: cell line), for a specified treatment duration (parameter: termination step) and for a constrained sequential drug combination space (parameter: drug pool). 
+Users can create a scenario by customizing input parameters tailored to their specific problem related to sequential therapy (Methods). Specifically, AlphaTherapy is designed to investigate sequential drug treatments applicable for different scenarios, including for a specified cell line (parameter: cell line), for a specified treatment duration (parameter: terminal step) and for a constrained sequential drug combination space (parameter: drug pool). 
 
 ## Table of contents
 - [AlphaTherapy](#alphatherapy)
@@ -51,7 +51,7 @@ pip install -e .
 ## Installation from Docker image
 
 ```bash
-docker pull xhchen/alphatherapy:latest
+docker pull xhchen/xhchen_alphatherapy:latest
 ```
 
 ## Usage
@@ -60,9 +60,9 @@ docker pull xhchen/alphatherapy:latest
 
 **This section will generate a list of effective sequential drug combinations for user-specified scenarios, sorted by episode reward. For illustration, we use a specific scenario with the following three key parameters:**
 
-1. Drug Pool: A drug set containing 387 anticancer drugs approved by the United States Food and Drug Administration (FDA).
+1. Drug Pool: A drug set containing 395 drugs (387 anticancer drugs approved by FDA and 8 other drugs).
 2. Cell Line: MCF7, a commonly used breast cancer cell line.
-3. Terminal Step: Step 3, indicating the drug duration time.
+3. terminal Step: Step 2, indicating the drug duration time. One step indicates 24 hour drug administration.
 
 #### 1.1 Drug pool construction
 
@@ -88,8 +88,9 @@ python ./scripts/utils/write_scenario_configs.py --drugset_file_name FDA_drugset
 ```
 
 **This command prepares configurations prior to running the RL agents by modifying two config files:**
-  * env_cpd.config: This file contains configurations for the cell model environment located in /scripts/gym_cell_model/gym_cell_model/config/. The command will append configurations for ENV_[drugset_short_name]_[cell_line]_[terminal_step], like ENV_FDA_MCF7_3.
-  * RL_agent.config: This file contains configurations for the RL agents located in /scripts/AlphaTherapy/config/. The command will append configurations for ENV_[drugset_short_name]_[cell_line]_[terminal_step]_SEED[i], where i ranges from 1 to 10, like ENV_FDA_MCF7_3_SEED1.
+* `env_cpd.config`: This file contains configurations for the cell model environment located in `/scripts/gym_cell_model/gym_cell_model/config/`. The command will append configurations named in the format `ENV_[drugset_short_name]_[cell_line]_[terminal_step]`, like `ENV_FDA_MCF7_2`.
+* `RL_agent.config`: This file contains configurations for the RL agents located in `/scripts/AlphaTherapy/config/`. The command will append configurations named in the format `ENV_[drugset_short_name]_[cell_line]_[terminal_step]_SEED[i]`, where `i` ranges from 1 to 10, like `ENV_FDA_MCF7_2_SEED1`.
+
 
 **Parameters**
   * drugset_file_name: the pickle file name of drug set which saved in the above command.
