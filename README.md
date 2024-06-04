@@ -39,7 +39,7 @@ Users can create a scenario by customizing input parameters tailored to their sp
 ## Installation from Docker image
 
 ```bash
-docker pull xhchen/xhchen_alphatherapy:latest
+docker pull xiaohanchen/alphatherapy:latest
 ```
 
 ## Installation from github
