@@ -117,14 +117,14 @@ nohup python ./scripts/AlphaTherapy/model/train_RL_agents.py --drugset_short_nam
 python ./scripts/AlphaTherapy/model/output_result.py --drugset_short_name FDA --cell_line MCF7 --terminal_step 2
 ```
 
-**This command will organize the sequential drug combination results for each scenario, like ENV_FDA_A375_STEP2,  and finally output a file named ENV_FDA_A375_STEP3.csv, stored in `/output/AlphaTherapy/`.**
+**This command will organize the sequential drug combination results for each scenario, like ENV_FDA_A375_STEP2,  and finally output a file named ENV_FDA_A375_STEP2.csv, stored in `/output/AlphaTherapy/`.**
 
 **Parameters**
   * `drugset_short_name`, `cell_line`, `terminal_step` is the same as above.
 
 ### 2. Downstream analysis
 ```python
-python ./scripts/downstream_analysis/src/run_downstram_analysis.py --combos_file_name ENV_FDA_MCF7_STEP2.csv --env_name ENV_FDA_MCF7_STEP3 --drugA_name "Morin Hydrate" --drugB_name "Afatinib (BIBW2992)"
+python ./scripts/downstream_analysis/src/run_downstram_analysis.py --combos_file_name ENV_FDA_MCF7_STEP2.csv --env_name ENV_FDA_MCF7_STEP2 --drugA_name "Morin Hydrate" --drugB_name "Afatinib (BIBW2992)"
 ```
 **This command will run downstream analysis and save the results in file like in `/output/downstream_analysis/`.**
 
