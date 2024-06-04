@@ -131,13 +131,14 @@ python ./scripts/downstream_analysis/src/run_downstram_analysis.py --combos_file
 **Parameters**
   * `combos_file_name`: the name of file generated in the previous command like ENV_FDA_MCF7_STEP2.csv.
   * `env_name`: the config name of cell model, like ENV_FDA_A375_STEP2.
-  * `drugA_name`: the name of the first frug choose from drug combos in the combos_file_name.csv.
-  * `drugB_name`: the name of the second frug choose from drug combos in the combos_file_name.csv.
+  * `drugA_name`: the name of the first frug from drug combos in the combos_file_name.csv.
+  * `drugB_name`: the name of the second frug from drug combos in the combos_file_name.csv.
 
 ## Citation
 
 ## Contacts
 bm2-lab@tongji.edu.cn
+xiaohanchen@tongji.edu.cn
 
 
 
