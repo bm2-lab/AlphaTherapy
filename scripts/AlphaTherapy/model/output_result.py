@@ -144,7 +144,7 @@ if not isinstance(args.terminal_step, list):
 
 project_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
-drug_info = pd.read_excel(project_dir +  "/data/400_drugs_MoA.xlsx")
+drug_info = pd.read_excel(project_dir +  "/data/400_drugs_MoA.xlsx", engine="openpyxl")
 
 for cell_line in args.cell_line: 
     for terminal_step in args.terminal_step:
