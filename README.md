@@ -40,7 +40,7 @@ Users can create a scenario by customizing input parameters tailored to their sp
 ## Installation from Docker image
 
 ```bash
-docker pull xiaohanchen/alphatherapy:latest
+docker pull xiaohanchen/alphatherapy:v1
 ```
 
 ## Installation from github
@@ -139,6 +139,7 @@ python ./scripts/downstream_analysis/src/run_downstram_analysis.py --combos_file
 
 ## Contacts
 bm2-lab@tongji.edu.cn
+
 xiaohanchen@tongji.edu.cn
 
 
