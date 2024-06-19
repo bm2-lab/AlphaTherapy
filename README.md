@@ -6,7 +6,7 @@ AlphaTherapy is a theoretical proof-of-concept AI framework for the rational des
 
 Users can create a scenario by customizing input parameters tailored to their specific problem related to sequential therapy (Methods). Specifically, AlphaTherapy is designed to investigate sequential drug treatments applicable for different scenarios, including for a specified cell line (parameter: cell line), for a specified treatment duration (parameter: terminal step) and for a constrained sequential drug combination space (parameter: drug pool). 
 
-![image](https://github.com/bm2-lab/AlphaTherapy/blob/main/Figure1.png)
+![image]([https://github.com/bm2-lab/AlphaTherapy/blob/main/Figure1.png](https://github.com/bm2-lab/AlphaTherapy/blob/main/imgs/Figure1.png))
 
 ## Table of contents
 - [AlphaTherapy](#alphatherapy)
