@@ -72,19 +72,18 @@ drugA_index = as.numeric(args[2])
 
 total_step = 10
 
-# for null_geo
-null_drugA_expression_file_path = file.path(project_dir, "data", "null_drugA_expression.csv")
-drugA_expression_data = read.csv(null_drugA_expression_file_path, row.names = 1, header = TRUE, check.names = FALSE)[1:10,]
-expression_change_data = drugA_expression_data[2,]
-intersect_genes = colnames(expression_change_data)[abs(expression_change_data)>1]
-
-ego <- enrichKEGG(gene          = intersect_genes,
-                  universe      = colnames(expression_change_data),
-                  organism      = "hsa",
-                  pAdjustMethod = "BH",
-                  pvalueCutoff  = 1,
-                  qvalueCutoff  = 0.05)
-null_ego = as.data.frame(ego)
+# for null_ego
+null_ego <- data.frame(
+  ID = character(0),
+  Description = character(0),
+  GeneRatio = character(0),
+  BgRatio = character(0),
+  pvalue = numeric(0),
+  p.adjust = numeric(0),
+  qvalue = numeric(0),
+  geneID = character(0),
+  Count = integer(0)
+)
 
 
 enrichKEGG_expre_changes(env_name, drugA_index)
