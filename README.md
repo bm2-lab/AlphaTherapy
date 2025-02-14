@@ -135,6 +135,11 @@ python ./scripts/downstream_analysis/src/run_downstram_analysis.py --combos_file
   * `drugA_name`: the name of the first frug from drug combos in the combos_file_name.csv.
   * `drugB_name`: the name of the second frug from drug combos in the combos_file_name.csv.
 
+## Reproducity
+To facilitate reliable reproduction of the results presented in the paper, we have provided a folder named `reproducibility`. 
+1. Running `main.sh` script in the main project directory that generates all the results required for plotting.
+2. The scripts within the `notebooks` directory, located under the reproductity folder, enable users to recreate the figures presented in the manuscript.
+
 ## Citation
 
 ## Contacts
