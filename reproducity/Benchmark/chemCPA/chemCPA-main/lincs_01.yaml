@@ -1,0 +1,81 @@
+# Config for manual run
+seml:
+  executable: chemCPA/experiments_run.py
+  name: manual_run_chemCPA
+  output_dir: project_folder/logs
+  conda_environment: chemical_CPA
+  project_root_dir: .
+
+fixed:
+  profiling.run_profiler: False
+  profiling.outdir: "./"
+
+  training.checkpoint_freq: 1            
+  training.num_epochs: 200                         
+  training.max_minutes: 12000                           
+  training.full_eval_during_train: False
+  training.run_eval_disentangle: False                   
+  training.run_eval_r2: True
+  training.run_eval_r2_sc: False
+  training.run_eval_logfold: False
+  training.save_checkpoints: True                         
+  training.save_dir: project_folder/checkpoints
+  training.file_name: output_01.pt
+
+  dataset.dataset_type: trapnell
+  dataset.data_params.perturbation_key: condition         
+  dataset.data_params.pert_category: cov_drug_dose_name   
+  dataset.data_params.dose_key: dose_val             
+  dataset.data_params.covariate_keys: cell_type          
+  dataset.data_params.smiles_key: canonical_smiles 
+  dataset.data_params.use_drugs_idx: True                
+  dataset.data_params.split_key: AlphaTherapy_split
+
+  model.additional_params.patience: 5 
+  model.additional_params.decoder_activation: linear
+  model.additional_params.doser_type: amortized
+  model.additional_params.multi_task: false
+  model.embedding.directory: project_folder/embeddings
+
+  model.load_pretrained: False
+  model.pretrained_model_path: null
+  model.pretrained_model_hashes: null
+
+  model.additional_params.seed: 1337
+
+  model.hparams.dim: 32
+  model.hparams.dosers_width: 64             
+  model.hparams.dosers_depth: 1
+  model.hparams.dosers_lr: 5.61e-4
+  model.hparams.dosers_wd: 1.33e-7
+
+  model.hparams.dropout: 0.2
+  model.hparams.autoencoder_width: 256
+  model.hparams.autoencoder_depth: 4
+  model.hparams.autoencoder_lr: 1.12e-3
+  model.hparams.autoencoder_wd: 3.752056e-7
+  
+  model.hparams.reg_multi_task: 0
+  model.hparams.adversary_width: 128
+  model.hparams.adversary_depth: 3
+  model.hparams.adversary_lr: 8.06e-4
+  model.hparams.adversary_wd: 0.000004
+  model.hparams.adversary_steps: 2
+  model.hparams.reg_adversary: 24.082073
+  model.hparams.reg_adversary_cov: 10
+  model.hparams.penalty_adversary: 3.35
+
+
+  model.hparams.batch_size: 128
+  model.hparams.step_size_lr: 100          
+  model.hparams.embedding_encoder_width: 128    
+  model.hparams.embedding_encoder_depth: 3
+
+rdkit_model:
+  fixed:
+    model.embedding.model: rdkit            
+
+    model.append_ae_layer: False
+    model.enable_cpa_mode: False
+    dataset.data_params.dataset_path: /root/project/data/preprocessed_data/state_transition_model_benchmark/chemCPA/lincs_preprocess_2.h5ad
+    dataset.data_params.degs_key: rank_genes_groups_cov

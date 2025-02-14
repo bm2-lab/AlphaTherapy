@@ -1,0 +1,1681 @@
+[{
+  "_id": 734,
+  "config": {
+    "overwrite": 734,
+    "db_collection": "multi_task",
+    "dataset": {
+      "data_params": {
+        "covariate_keys": "cell_type",
+        "dataset_path": "project_folder/datasets/sciplex_complete_middle_subset.h5ad",
+        "degs_key": "all_DEGs",
+        "dose_key": "dose",
+        "pert_category": "cov_drug_dose_name",
+        "perturbation_key": "condition",
+        "smiles_key": "SMILES",
+        "split_key": "split_ood_multi_task",
+        "use_drugs_idx": true
+      },
+      "dataset_type": "trapnell"
+    },
+    "model": {
+      "additional_params": {
+        "decoder_activation": "ReLU",
+        "doser_type": "amortized",
+        "multi_task": true,
+        "patience": 50,
+        "seed": 1337
+      },
+      "append_ae_layer": true,
+      "embedding": {
+        "directory": "project_folder/embeddings",
+        "model": "grover_base"
+      },
+      "hparams": {
+        "adversary_depth": 3,
+        "adversary_lr": 0.00015401700264919835,
+        "adversary_steps": 2,
+        "adversary_wd": 1.1526449540315636e-7,
+        "adversary_width": 256,
+        "autoencoder_depth": 4,
+        "autoencoder_lr": 0.00026587543983272677,
+        "autoencoder_wd": 4.3352817949515724e-8,
+        "autoencoder_width": 256,
+        "batch_size": 128,
+        "dim": 32,
+        "dosers_depth": 2,
+        "dosers_lr": 0.00026587543983272677,
+        "dosers_wd": 4.3352817949515724e-8,
+        "dosers_width": 512,
+        "dropout": 0.262378,
+        "embedding_encoder_depth": 3,
+        "embedding_encoder_width": 512,
+        "penalty_adversary": 0.10943342660062642,
+        "reg_adversary": 2.188668532012528,
+        "reg_adversary_cov": 8.152843673110732,
+        "reg_multi_task": 24.295633253176874,
+        "step_size_lr": 50
+      },
+      "load_pretrained": true,
+      "pretrained_model_hashes": {
+        "grover_base": "ff420aea264fca7668ecb147f60762a1",
+        "jtvae": "a7060ac4e2c6154e64a13acd414cbba2",
+        "rdkit": "4f061dbfc7af05cf84f06a724b0c8563"
+      },
+      "pretrained_model_path": "project_folder/checkpoints"
+    },
+    "profiling": {
+      "outdir": "./",
+      "run_profiler": false
+    },
+    "training": {
+      "checkpoint_freq": 25,
+      "full_eval_during_train": false,
+      "max_minutes": 1200,
+      "num_epochs": 151,
+      "run_eval_disentangle": true,
+      "run_eval_logfold": false,
+      "run_eval_r2": true,
+      "run_eval_r2_sc": false,
+      "save_checkpoints": true,
+      "save_dir": "project_folder/checkpoints"
+    },
+    "seed": 461520290
+  },
+  "config_hash": "0f4a3b11e1fbe3da58125f39ff6fb035",
+  "experiment": {
+    "name": "seml_sweep_icb",
+    "base_dir": "/tmp/2904446d-044b-484d-b285-3a65fe4334a3/chemCPA",
+    "sources": [
+      [
+        "__init__.py",
+        {
+          "$oid": "6281d479843696a1c5b1b96c"
+        }
+      ],
+      [
+        "data.py",
+        {
+          "$oid": "6281d479843696a1c5b1b96d"
+        }
+      ],
+      [
+        "embedding.py",
+        {
+          "$oid": "6281d479843696a1c5b1b96f"
+        }
+      ],
+      [
+        "model.py",
+        {
+          "$oid": "6281d479843696a1c5b1b971"
+        }
+      ],
+      [
+        "profiling.py",
+        {
+          "$oid": "6281d479843696a1c5b1b973"
+        }
+      ],
+      [
+        "seml_sweep_icb.py",
+        {
+          "$oid": "6281d479843696a1c5b1b975"
+        }
+      ],
+      [
+        "train.py",
+        {
+          "$oid": "6281d479843696a1c5b1b977"
+        }
+      ]
+    ],
+    "dependencies": [
+      "numpy==1.21.5",
+      "sacred==0.8.2",
+      "seml==0.3.5",
+      "torch==1.10.1"
+    ],
+    "repositories": [],
+    "mainfile": "seml_sweep_icb.py"
+  }
+},{
+  "_id": 693,
+  "config": {
+    "overwrite": 693,
+    "db_collection": "multi_task",
+    "dataset": {
+      "data_params": {
+        "covariate_keys": "cell_type",
+        "dataset_path": "project_folder/datasets/sciplex_complete_middle_subset.h5ad",
+        "degs_key": "all_DEGs",
+        "dose_key": "dose",
+        "pert_category": "cov_drug_dose_name",
+        "perturbation_key": "condition",
+        "smiles_key": "SMILES",
+        "split_key": "split_ood_multi_task",
+        "use_drugs_idx": true
+      },
+      "dataset_type": "trapnell"
+    },
+    "model": {
+      "additional_params": {
+        "decoder_activation": "ReLU",
+        "doser_type": "amortized",
+        "multi_task": true,
+        "patience": 50,
+        "seed": 1337
+      },
+      "append_ae_layer": true,
+      "embedding": {
+        "directory": "project_folder/embeddings",
+        "model": "rdkit"
+      },
+      "hparams": {
+        "adversary_depth": 2,
+        "adversary_lr": 0.0024171857265923194,
+        "adversary_steps": 2,
+        "adversary_wd": 0.00004570563099801459,
+        "adversary_width": 128,
+        "autoencoder_depth": 4,
+        "autoencoder_lr": 0.002910635913133068,
+        "autoencoder_wd": 0.0000015702970884055366,
+        "autoencoder_width": 256,
+        "batch_size": 128,
+        "dim": 32,
+        "dosers_depth": 3,
+        "dosers_lr": 0.002910635913133068,
+        "dosers_wd": 0.0000015702970884055366,
+        "dosers_width": 64,
+        "dropout": 0.262378,
+        "embedding_encoder_depth": 4,
+        "embedding_encoder_width": 128,
+        "penalty_adversary": 0.7441632389160632,
+        "reg_adversary": 14.883264778321262,
+        "reg_adversary_cov": 26.975154833351137,
+        "reg_multi_task": 39.1128688024506,
+        "step_size_lr": 50
+      },
+      "load_pretrained": false,
+      "pretrained_model_hashes": {
+        "grover_base": "ff420aea264fca7668ecb147f60762a1",
+        "jtvae": "a7060ac4e2c6154e64a13acd414cbba2",
+        "rdkit": "4f061dbfc7af05cf84f06a724b0c8563"
+      },
+      "pretrained_model_path": "project_folder/checkpoints"
+    },
+    "profiling": {
+      "outdir": "./",
+      "run_profiler": false
+    },
+    "training": {
+      "checkpoint_freq": 25,
+      "full_eval_during_train": false,
+      "max_minutes": 1200,
+      "num_epochs": 151,
+      "run_eval_disentangle": true,
+      "run_eval_logfold": false,
+      "run_eval_r2": true,
+      "run_eval_r2_sc": false,
+      "save_checkpoints": true,
+      "save_dir": "project_folder/checkpoints"
+    },
+    "seed": 622215542
+  },
+  "config_hash": "475e26950b2c531bea88931a4b2c27b7",
+  "experiment": {
+    "name": "seml_sweep_icb",
+    "base_dir": "/tmp/5337306d-8b7b-473f-be6c-bcd564b85dd5/chemCPA",
+    "sources": [
+      [
+        "__init__.py",
+        {
+          "$oid": "6281b1a1fffc92c9b1dd0a01"
+        }
+      ],
+      [
+        "data.py",
+        {
+          "$oid": "6281b1a1fffc92c9b1dd0a02"
+        }
+      ],
+      [
+        "embedding.py",
+        {
+          "$oid": "6281b1a1fffc92c9b1dd0a04"
+        }
+      ],
+      [
+        "model.py",
+        {
+          "$oid": "6281b1a1fffc92c9b1dd0a06"
+        }
+      ],
+      [
+        "profiling.py",
+        {
+          "$oid": "6281b1a1fffc92c9b1dd0a08"
+        }
+      ],
+      [
+        "seml_sweep_icb.py",
+        {
+          "$oid": "6281b1a1fffc92c9b1dd0a0a"
+        }
+      ],
+      [
+        "train.py",
+        {
+          "$oid": "6281b1a1fffc92c9b1dd0a0c"
+        }
+      ]
+    ],
+    "dependencies": [
+      "numpy==1.21.5",
+      "sacred==0.8.2",
+      "seml==0.3.5",
+      "torch==1.10.1"
+    ],
+    "repositories": [],
+    "mainfile": "seml_sweep_icb.py"
+  }
+},{
+  "_id": 522,
+  "config": {
+    "overwrite": 522,
+    "db_collection": "multi_task",
+    "dataset": {
+      "data_params": {
+        "covariate_keys": "cell_type",
+        "dataset_path": "project_folder/datasets/sciplex_complete_middle_subset_lincs_genes.h5ad",
+        "degs_key": "lincs_DEGs",
+        "dose_key": "dose",
+        "pert_category": "cov_drug_dose_name",
+        "perturbation_key": "condition",
+        "smiles_key": "SMILES",
+        "split_key": "split_ood_multi_task",
+        "use_drugs_idx": true
+      },
+      "dataset_type": "trapnell"
+    },
+    "model": {
+      "additional_params": {
+        "decoder_activation": "ReLU",
+        "doser_type": "amortized",
+        "multi_task": true,
+        "patience": 50,
+        "seed": 1337
+      },
+      "append_ae_layer": false,
+      "embedding": {
+        "directory": "project_folder/embeddings",
+        "model": "rdkit"
+      },
+      "hparams": {
+        "adversary_depth": 4,
+        "adversary_lr": 0.008526320769491553,
+        "adversary_steps": 2,
+        "adversary_wd": 0.0007072114131472234,
+        "adversary_width": 128,
+        "autoencoder_depth": 4,
+        "autoencoder_lr": 0.008706020878304856,
+        "autoencoder_wd": 0.000008123245085588683,
+        "autoencoder_width": 256,
+        "batch_size": 128,
+        "dim": 32,
+        "dosers_depth": 3,
+        "dosers_lr": 0.008706020878304856,
+        "dosers_wd": 0.000008123245085588683,
+        "dosers_width": 64,
+        "dropout": 0.262378,
+        "embedding_encoder_depth": 4,
+        "embedding_encoder_width": 128,
+        "penalty_adversary": 1.789879416373527,
+        "reg_adversary": 35.797588327470535,
+        "reg_adversary_cov": 46.65303012212832,
+        "reg_multi_task": 48.64026480590583,
+        "step_size_lr": 50
+      },
+      "load_pretrained": false,
+      "pretrained_model_hashes": {
+        "grover_base": "ff420aea264fca7668ecb147f60762a1",
+        "jtvae": "a7060ac4e2c6154e64a13acd414cbba2",
+        "rdkit": "4f061dbfc7af05cf84f06a724b0c8563"
+      },
+      "pretrained_model_path": "project_folder/checkpoints"
+    },
+    "profiling": {
+      "outdir": "./",
+      "run_profiler": false
+    },
+    "training": {
+      "checkpoint_freq": 25,
+      "full_eval_during_train": false,
+      "max_minutes": 1200,
+      "num_epochs": 151,
+      "run_eval_disentangle": true,
+      "run_eval_logfold": false,
+      "run_eval_r2": true,
+      "run_eval_r2_sc": false,
+      "save_checkpoints": true,
+      "save_dir": "project_folder/checkpoints"
+    },
+    "seed": 109701154
+  },
+  "config_hash": "59bdaefb1c1adfaf2976e3fdf62afa21",
+  "experiment": {
+    "name": "seml_sweep_icb",
+    "base_dir": "/tmp/51f01c11-7ccb-464f-a133-618d4fe06232/chemCPA",
+    "sources": [
+      [
+        "__init__.py",
+        {
+          "$oid": "628139b37a88a21c7193a618"
+        }
+      ],
+      [
+        "data.py",
+        {
+          "$oid": "628139b37a88a21c7193a619"
+        }
+      ],
+      [
+        "embedding.py",
+        {
+          "$oid": "628139b37a88a21c7193a61b"
+        }
+      ],
+      [
+        "model.py",
+        {
+          "$oid": "628139b37a88a21c7193a61d"
+        }
+      ],
+      [
+        "profiling.py",
+        {
+          "$oid": "628139b37a88a21c7193a61f"
+        }
+      ],
+      [
+        "seml_sweep_icb.py",
+        {
+          "$oid": "628139b3f1389e233830aeee"
+        }
+      ],
+      [
+        "train.py",
+        {
+          "$oid": "628139b37a88a21c7193a621"
+        }
+      ]
+    ],
+    "dependencies": [
+      "numpy==1.21.5",
+      "sacred==0.8.2",
+      "seml==0.3.5",
+      "torch==1.10.1"
+    ],
+    "repositories": [],
+    "mainfile": "seml_sweep_icb.py"
+  }
+},{
+  "_id": 572,
+  "config": {
+    "overwrite": 572,
+    "db_collection": "multi_task",
+    "dataset": {
+      "data_params": {
+        "covariate_keys": "cell_type",
+        "dataset_path": "project_folder/datasets/sciplex_complete_middle_subset_lincs_genes.h5ad",
+        "degs_key": "lincs_DEGs",
+        "dose_key": "dose",
+        "pert_category": "cov_drug_dose_name",
+        "perturbation_key": "condition",
+        "smiles_key": "SMILES",
+        "split_key": "split_ood_multi_task",
+        "use_drugs_idx": true
+      },
+      "dataset_type": "trapnell"
+    },
+    "model": {
+      "additional_params": {
+        "decoder_activation": "ReLU",
+        "doser_type": "amortized",
+        "multi_task": true,
+        "patience": 50,
+        "seed": 1337
+      },
+      "append_ae_layer": false,
+      "embedding": {
+        "directory": "project_folder/embeddings",
+        "model": "grover_base"
+      },
+      "hparams": {
+        "adversary_depth": 2,
+        "adversary_lr": 0.007701798297509624,
+        "adversary_steps": 3,
+        "adversary_wd": 0.0005669849511478851,
+        "adversary_width": 64,
+        "autoencoder_depth": 4,
+        "autoencoder_lr": 0.007969454818643935,
+        "autoencoder_wd": 0.000007114476009343412,
+        "autoencoder_width": 256,
+        "batch_size": 128,
+        "dim": 32,
+        "dosers_depth": 2,
+        "dosers_lr": 0.007969454818643935,
+        "dosers_wd": 0.000007114476009343412,
+        "dosers_width": 512,
+        "dropout": 0.262378,
+        "embedding_encoder_depth": 3,
+        "embedding_encoder_width": 512,
+        "penalty_adversary": 1.6675211761940134,
+        "reg_adversary": 33.350423523880266,
+        "reg_adversary_cov": 44.63590152176815,
+        "reg_multi_task": 47.792225564616714,
+        "step_size_lr": 50
+      },
+      "load_pretrained": false,
+      "pretrained_model_hashes": {
+        "grover_base": "ff420aea264fca7668ecb147f60762a1",
+        "jtvae": "a7060ac4e2c6154e64a13acd414cbba2",
+        "rdkit": "4f061dbfc7af05cf84f06a724b0c8563"
+      },
+      "pretrained_model_path": "project_folder/checkpoints"
+    },
+    "profiling": {
+      "outdir": "./",
+      "run_profiler": false
+    },
+    "training": {
+      "checkpoint_freq": 25,
+      "full_eval_during_train": false,
+      "max_minutes": 1200,
+      "num_epochs": 151,
+      "run_eval_disentangle": true,
+      "run_eval_logfold": false,
+      "run_eval_r2": true,
+      "run_eval_r2_sc": false,
+      "save_checkpoints": true,
+      "save_dir": "project_folder/checkpoints"
+    },
+    "seed": 250641667
+  },
+  "config_hash": "60e4b40e8d67bff2d5efc5e22e265820",
+  "experiment": {
+    "name": "seml_sweep_icb",
+    "base_dir": "/tmp/0b5866a8-4fdd-4b2f-8ffc-c6ac2b96fe90/chemCPA",
+    "sources": [
+      [
+        "__init__.py",
+        {
+          "$oid": "628158cb59d1de1cf61b739d"
+        }
+      ],
+      [
+        "data.py",
+        {
+          "$oid": "628158cb59d1de1cf61b739e"
+        }
+      ],
+      [
+        "embedding.py",
+        {
+          "$oid": "628158cb59d1de1cf61b73a0"
+        }
+      ],
+      [
+        "model.py",
+        {
+          "$oid": "628158cb59d1de1cf61b73a2"
+        }
+      ],
+      [
+        "profiling.py",
+        {
+          "$oid": "628158cb59d1de1cf61b73a4"
+        }
+      ],
+      [
+        "seml_sweep_icb.py",
+        {
+          "$oid": "628158cb59d1de1cf61b73a6"
+        }
+      ],
+      [
+        "train.py",
+        {
+          "$oid": "628158cb59d1de1cf61b73a8"
+        }
+      ]
+    ],
+    "dependencies": [
+      "numpy==1.21.5",
+      "sacred==0.8.2",
+      "seml==0.3.5",
+      "torch==1.10.1"
+    ],
+    "repositories": [],
+    "mainfile": "seml_sweep_icb.py"
+  }
+},{
+  "_id": 827,
+  "config": {
+    "overwrite": 827,
+    "db_collection": "multi_task",
+    "dataset": {
+      "data_params": {
+        "covariate_keys": "cell_type",
+        "dataset_path": "project_folder/datasets/sciplex_complete_middle_subset.h5ad",
+        "degs_key": "all_DEGs",
+        "dose_key": "dose",
+        "pert_category": "cov_drug_dose_name",
+        "perturbation_key": "condition",
+        "smiles_key": "SMILES",
+        "split_key": "split_ood_multi_task",
+        "use_drugs_idx": true
+      },
+      "dataset_type": "trapnell"
+    },
+    "model": {
+      "additional_params": {
+        "decoder_activation": "ReLU",
+        "doser_type": "amortized",
+        "multi_task": false,
+        "patience": 50,
+        "seed": 1337
+      },
+      "append_ae_layer": true,
+      "embedding": {
+        "directory": "project_folder/embeddings",
+        "model": "jtvae"
+      },
+      "hparams": {
+        "adversary_depth": 2,
+        "adversary_lr": 0.007701798297509624,
+        "adversary_steps": 3,
+        "adversary_wd": 0.0005669849511478851,
+        "adversary_width": 64,
+        "autoencoder_depth": 4,
+        "autoencoder_lr": 0.007969454818643935,
+        "autoencoder_wd": 0.000007114476009343412,
+        "autoencoder_width": 256,
+        "batch_size": 128,
+        "dim": 32,
+        "dosers_depth": 2,
+        "dosers_lr": 0.007969454818643935,
+        "dosers_wd": 0.000007114476009343412,
+        "dosers_width": 64,
+        "dropout": 0.262378,
+        "embedding_encoder_depth": 4,
+        "embedding_encoder_width": 256,
+        "penalty_adversary": 1.6675211761940134,
+        "reg_adversary": 33.350423523880266,
+        "reg_adversary_cov": 44.63590152176815,
+        "reg_multi_task": 47.792225564616714,
+        "step_size_lr": 50
+      },
+      "load_pretrained": false,
+      "pretrained_model_hashes": {
+        "grover_base": "ff420aea264fca7668ecb147f60762a1",
+        "jtvae": "a7060ac4e2c6154e64a13acd414cbba2",
+        "rdkit": "4f061dbfc7af05cf84f06a724b0c8563"
+      },
+      "pretrained_model_path": "project_folder/checkpoints"
+    },
+    "profiling": {
+      "outdir": "./",
+      "run_profiler": false
+    },
+    "training": {
+      "checkpoint_freq": 25,
+      "full_eval_during_train": false,
+      "max_minutes": 1200,
+      "num_epochs": 151,
+      "run_eval_disentangle": true,
+      "run_eval_logfold": false,
+      "run_eval_r2": true,
+      "run_eval_r2_sc": false,
+      "save_checkpoints": true,
+      "save_dir": "project_folder/checkpoints"
+    },
+    "seed": 149164249
+  },
+  "config_hash": "6b465400467f69da861e3ef0b4709e19",
+  "experiment": {
+    "name": "seml_sweep_icb",
+    "base_dir": "/tmp/ec03a533-289d-4583-a8ba-cfe298b7726e/chemCPA",
+    "sources": [
+      [
+        "__init__.py",
+        {
+          "$oid": "62823aff80bbb35eaff699d0"
+        }
+      ],
+      [
+        "data.py",
+        {
+          "$oid": "62823aff80bbb35eaff699d1"
+        }
+      ],
+      [
+        "embedding.py",
+        {
+          "$oid": "62823aff80bbb35eaff699d3"
+        }
+      ],
+      [
+        "model.py",
+        {
+          "$oid": "62823aff80bbb35eaff699d5"
+        }
+      ],
+      [
+        "profiling.py",
+        {
+          "$oid": "62823aff80bbb35eaff699d7"
+        }
+      ],
+      [
+        "seml_sweep_icb.py",
+        {
+          "$oid": "62823aff80bbb35eaff699d9"
+        }
+      ],
+      [
+        "train.py",
+        {
+          "$oid": "62823aff80bbb35eaff699db"
+        }
+      ]
+    ],
+    "dependencies": [
+      "numpy==1.21.5",
+      "sacred==0.8.2",
+      "seml==0.3.5",
+      "torch==1.10.1"
+    ],
+    "repositories": [],
+    "mainfile": "seml_sweep_icb.py"
+  }
+},{
+  "_id": 616,
+  "config": {
+    "overwrite": 616,
+    "db_collection": "multi_task",
+    "dataset": {
+      "data_params": {
+        "covariate_keys": "cell_type",
+        "dataset_path": "project_folder/datasets/sciplex_complete_middle_subset_lincs_genes.h5ad",
+        "degs_key": "lincs_DEGs",
+        "dose_key": "dose",
+        "pert_category": "cov_drug_dose_name",
+        "perturbation_key": "condition",
+        "smiles_key": "SMILES",
+        "split_key": "split_ood_multi_task",
+        "use_drugs_idx": true
+      },
+      "dataset_type": "trapnell"
+    },
+    "model": {
+      "additional_params": {
+        "decoder_activation": "ReLU",
+        "doser_type": "amortized",
+        "multi_task": false,
+        "patience": 50,
+        "seed": 1337
+      },
+      "append_ae_layer": false,
+      "embedding": {
+        "directory": "project_folder/embeddings",
+        "model": "jtvae"
+      },
+      "hparams": {
+        "adversary_depth": 3,
+        "adversary_lr": 0.0003637458544013904,
+        "adversary_steps": 3,
+        "adversary_wd": 7.459343285726555e-7,
+        "adversary_width": 256,
+        "autoencoder_depth": 4,
+        "autoencoder_lr": 0.0005611516415334501,
+        "autoencoder_wd": 1.3292918943162187e-7,
+        "autoencoder_width": 256,
+        "batch_size": 128,
+        "dim": 32,
+        "dosers_depth": 2,
+        "dosers_lr": 0.0005611516415334501,
+        "dosers_wd": 1.3292918943162187e-7,
+        "dosers_width": 64,
+        "dropout": 0.262378,
+        "embedding_encoder_depth": 4,
+        "embedding_encoder_width": 256,
+        "penalty_adversary": 0.19906996673933372,
+        "reg_adversary": 3.9813993347866736,
+        "reg_adversary_cov": 11.844319751820388,
+        "reg_multi_task": 28.188664052384844,
+        "step_size_lr": 50
+      },
+      "load_pretrained": true,
+      "pretrained_model_hashes": {
+        "grover_base": "ff420aea264fca7668ecb147f60762a1",
+        "jtvae": "a7060ac4e2c6154e64a13acd414cbba2",
+        "rdkit": "4f061dbfc7af05cf84f06a724b0c8563"
+      },
+      "pretrained_model_path": "project_folder/checkpoints"
+    },
+    "profiling": {
+      "outdir": "./",
+      "run_profiler": false
+    },
+    "training": {
+      "checkpoint_freq": 25,
+      "full_eval_during_train": false,
+      "max_minutes": 1200,
+      "num_epochs": 151,
+      "run_eval_disentangle": true,
+      "run_eval_logfold": false,
+      "run_eval_r2": true,
+      "run_eval_r2_sc": false,
+      "save_checkpoints": true,
+      "save_dir": "project_folder/checkpoints"
+    },
+    "seed": 369542324
+  },
+  "config_hash": "915345a522c29fa709b995d6149083b9",
+  "experiment": {
+    "name": "seml_sweep_icb",
+    "base_dir": "/tmp/7e0e576e-90cf-4264-a21c-be95c3a98709/chemCPA",
+    "sources": [
+      [
+        "__init__.py",
+        {
+          "$oid": "6281777877e8d56915db96a1"
+        }
+      ],
+      [
+        "data.py",
+        {
+          "$oid": "6281777877e8d56915db96a2"
+        }
+      ],
+      [
+        "embedding.py",
+        {
+          "$oid": "6281777877e8d56915db96a4"
+        }
+      ],
+      [
+        "model.py",
+        {
+          "$oid": "6281777877e8d56915db96a6"
+        }
+      ],
+      [
+        "profiling.py",
+        {
+          "$oid": "6281777877e8d56915db96a8"
+        }
+      ],
+      [
+        "seml_sweep_icb.py",
+        {
+          "$oid": "6281777877e8d56915db96aa"
+        }
+      ],
+      [
+        "train.py",
+        {
+          "$oid": "6281777877e8d56915db96ac"
+        }
+      ]
+    ],
+    "dependencies": [
+      "numpy==1.21.5",
+      "sacred==0.8.2",
+      "seml==0.3.5",
+      "torch==1.10.1"
+    ],
+    "repositories": [],
+    "mainfile": "seml_sweep_icb.py"
+  }
+},{
+  "_id": 654,
+  "config": {
+    "overwrite": 654,
+    "db_collection": "multi_task",
+    "dataset": {
+      "data_params": {
+        "covariate_keys": "cell_type",
+        "dataset_path": "project_folder/datasets/sciplex_complete_middle_subset_lincs_genes.h5ad",
+        "degs_key": "lincs_DEGs",
+        "dose_key": "dose",
+        "pert_category": "cov_drug_dose_name",
+        "perturbation_key": "condition",
+        "smiles_key": "SMILES",
+        "split_key": "split_ood_multi_task",
+        "use_drugs_idx": true
+      },
+      "dataset_type": "trapnell"
+    },
+    "model": {
+      "additional_params": {
+        "decoder_activation": "ReLU",
+        "doser_type": "amortized",
+        "multi_task": false,
+        "patience": 50,
+        "seed": 1337
+      },
+      "append_ae_layer": false,
+      "embedding": {
+        "directory": "project_folder/embeddings",
+        "model": "jtvae"
+      },
+      "hparams": {
+        "adversary_depth": 4,
+        "adversary_lr": 0.0012082413014948745,
+        "adversary_steps": 2,
+        "adversary_wd": 0.00001012919795684574,
+        "adversary_width": 256,
+        "autoencoder_depth": 4,
+        "autoencoder_lr": 0.0015930522616241008,
+        "autoencoder_wd": 6.358358856676255e-7,
+        "autoencoder_width": 256,
+        "batch_size": 128,
+        "dim": 32,
+        "dosers_depth": 2,
+        "dosers_lr": 0.0015930522616241008,
+        "dosers_wd": 6.358358856676255e-7,
+        "dosers_width": 64,
+        "dropout": 0.262378,
+        "embedding_encoder_depth": 4,
+        "embedding_encoder_width": 256,
+        "penalty_adversary": 0.45918988705873276,
+        "reg_adversary": 9.183797741174654,
+        "reg_adversary_cov": 19.95652939280839,
+        "reg_multi_task": 34.69266868719914,
+        "step_size_lr": 50
+      },
+      "load_pretrained": false,
+      "pretrained_model_hashes": {
+        "grover_base": "ff420aea264fca7668ecb147f60762a1",
+        "jtvae": "a7060ac4e2c6154e64a13acd414cbba2",
+        "rdkit": "4f061dbfc7af05cf84f06a724b0c8563"
+      },
+      "pretrained_model_path": "project_folder/checkpoints"
+    },
+    "profiling": {
+      "outdir": "./",
+      "run_profiler": false
+    },
+    "training": {
+      "checkpoint_freq": 25,
+      "full_eval_during_train": false,
+      "max_minutes": 1200,
+      "num_epochs": 151,
+      "run_eval_disentangle": true,
+      "run_eval_logfold": false,
+      "run_eval_r2": true,
+      "run_eval_r2_sc": false,
+      "save_checkpoints": true,
+      "save_dir": "project_folder/checkpoints"
+    },
+    "seed": 957156175
+  },
+  "config_hash": "934c89b742a6309ad6bb2e1cf90c5e50",
+  "experiment": {
+    "name": "seml_sweep_icb",
+    "base_dir": "/tmp/2ba1172c-043a-4e76-8df1-d6287d5ba88b/chemCPA",
+    "sources": [
+      [
+        "__init__.py",
+        {
+          "$oid": "628194326a021c5522df7900"
+        }
+      ],
+      [
+        "data.py",
+        {
+          "$oid": "628194326a021c5522df7901"
+        }
+      ],
+      [
+        "embedding.py",
+        {
+          "$oid": "628194326a021c5522df7903"
+        }
+      ],
+      [
+        "model.py",
+        {
+          "$oid": "628194326a021c5522df7905"
+        }
+      ],
+      [
+        "profiling.py",
+        {
+          "$oid": "628194326a021c5522df7907"
+        }
+      ],
+      [
+        "seml_sweep_icb.py",
+        {
+          "$oid": "628194326a021c5522df7909"
+        }
+      ],
+      [
+        "train.py",
+        {
+          "$oid": "628194326a021c5522df790b"
+        }
+      ]
+    ],
+    "dependencies": [
+      "numpy==1.21.5",
+      "sacred==0.8.2",
+      "seml==0.3.5",
+      "torch==1.10.1"
+    ],
+    "repositories": [],
+    "mainfile": "seml_sweep_icb.py"
+  }
+},{
+  "_id": 762,
+  "config": {
+    "overwrite": 762,
+    "db_collection": "multi_task",
+    "dataset": {
+      "data_params": {
+        "covariate_keys": "cell_type",
+        "dataset_path": "project_folder/datasets/sciplex_complete_middle_subset.h5ad",
+        "degs_key": "all_DEGs",
+        "dose_key": "dose",
+        "pert_category": "cov_drug_dose_name",
+        "perturbation_key": "condition",
+        "smiles_key": "SMILES",
+        "split_key": "split_ood_multi_task",
+        "use_drugs_idx": true
+      },
+      "dataset_type": "trapnell"
+    },
+    "model": {
+      "additional_params": {
+        "decoder_activation": "ReLU",
+        "doser_type": "amortized",
+        "multi_task": true,
+        "patience": 50,
+        "seed": 1337
+      },
+      "append_ae_layer": true,
+      "embedding": {
+        "directory": "project_folder/embeddings",
+        "model": "grover_base"
+      },
+      "hparams": {
+        "adversary_depth": 2,
+        "adversary_lr": 0.008526320769491553,
+        "adversary_steps": 3,
+        "adversary_wd": 0.0007072114131472234,
+        "adversary_width": 64,
+        "autoencoder_depth": 4,
+        "autoencoder_lr": 0.008706020878304856,
+        "autoencoder_wd": 0.000008123245085588683,
+        "autoencoder_width": 256,
+        "batch_size": 128,
+        "dim": 32,
+        "dosers_depth": 2,
+        "dosers_lr": 0.008706020878304856,
+        "dosers_wd": 0.000008123245085588683,
+        "dosers_width": 512,
+        "dropout": 0.262378,
+        "embedding_encoder_depth": 3,
+        "embedding_encoder_width": 512,
+        "penalty_adversary": 1.789879416373527,
+        "reg_adversary": 35.797588327470535,
+        "reg_adversary_cov": 46.65303012212832,
+        "reg_multi_task": 48.64026480590583,
+        "step_size_lr": 50
+      },
+      "load_pretrained": false,
+      "pretrained_model_hashes": {
+        "grover_base": "ff420aea264fca7668ecb147f60762a1",
+        "jtvae": "a7060ac4e2c6154e64a13acd414cbba2",
+        "rdkit": "4f061dbfc7af05cf84f06a724b0c8563"
+      },
+      "pretrained_model_path": "project_folder/checkpoints"
+    },
+    "profiling": {
+      "outdir": "./",
+      "run_profiler": false
+    },
+    "training": {
+      "checkpoint_freq": 25,
+      "full_eval_during_train": false,
+      "max_minutes": 1200,
+      "num_epochs": 151,
+      "run_eval_disentangle": true,
+      "run_eval_logfold": false,
+      "run_eval_r2": true,
+      "run_eval_r2_sc": false,
+      "save_checkpoints": true,
+      "save_dir": "project_folder/checkpoints"
+    },
+    "seed": 503477243
+  },
+  "config_hash": "b372147c80cf9ad4bd10d16bc56b7534",
+  "experiment": {
+    "name": "seml_sweep_icb",
+    "base_dir": "/tmp/abe459ba-bb45-48fc-8342-683237a5512b/chemCPA",
+    "sources": [
+      [
+        "__init__.py",
+        {
+          "$oid": "6281f1c0cf933c940be2c8f7"
+        }
+      ],
+      [
+        "data.py",
+        {
+          "$oid": "6281f1c0cf933c940be2c8f8"
+        }
+      ],
+      [
+        "embedding.py",
+        {
+          "$oid": "6281f1c0cf933c940be2c8fa"
+        }
+      ],
+      [
+        "model.py",
+        {
+          "$oid": "6281f1c0cf933c940be2c8fc"
+        }
+      ],
+      [
+        "profiling.py",
+        {
+          "$oid": "6281f1c0cf933c940be2c8fe"
+        }
+      ],
+      [
+        "seml_sweep_icb.py",
+        {
+          "$oid": "6281f1c0cf933c940be2c900"
+        }
+      ],
+      [
+        "train.py",
+        {
+          "$oid": "6281f1c0cf933c940be2c902"
+        }
+      ]
+    ],
+    "dependencies": [
+      "numpy==1.21.5",
+      "sacred==0.8.2",
+      "seml==0.3.5",
+      "torch==1.10.1"
+    ],
+    "repositories": [],
+    "mainfile": "seml_sweep_icb.py"
+  }
+},{
+  "_id": 555,
+  "config": {
+    "overwrite": 555,
+    "db_collection": "multi_task",
+    "dataset": {
+      "data_params": {
+        "covariate_keys": "cell_type",
+        "dataset_path": "project_folder/datasets/sciplex_complete_middle_subset_lincs_genes.h5ad",
+        "degs_key": "lincs_DEGs",
+        "dose_key": "dose",
+        "pert_category": "cov_drug_dose_name",
+        "perturbation_key": "condition",
+        "smiles_key": "SMILES",
+        "split_key": "split_ood_multi_task",
+        "use_drugs_idx": true
+      },
+      "dataset_type": "trapnell"
+    },
+    "model": {
+      "additional_params": {
+        "decoder_activation": "ReLU",
+        "doser_type": "amortized",
+        "multi_task": true,
+        "patience": 50,
+        "seed": 1337
+      },
+      "append_ae_layer": false,
+      "embedding": {
+        "directory": "project_folder/embeddings",
+        "model": "grover_base"
+      },
+      "hparams": {
+        "adversary_depth": 3,
+        "adversary_lr": 0.00013102516275481272,
+        "adversary_steps": 3,
+        "adversary_wd": 8.111941985431936e-8,
+        "adversary_width": 256,
+        "autoencoder_depth": 4,
+        "autoencoder_lr": 0.0002310201887845291,
+        "autoencoder_wd": 3.5113563139704124e-8,
+        "autoencoder_width": 256,
+        "batch_size": 128,
+        "dim": 32,
+        "dosers_depth": 2,
+        "dosers_lr": 0.0002310201887845291,
+        "dosers_wd": 3.5113563139704124e-8,
+        "dosers_width": 512,
+        "dropout": 0.262378,
+        "embedding_encoder_depth": 3,
+        "embedding_encoder_width": 512,
+        "penalty_adversary": 0.09778325945801387,
+        "reg_adversary": 1.955665189160277,
+        "reg_adversary_cov": 7.599674150654904,
+        "reg_multi_task": 23.62574024071315,
+        "step_size_lr": 50
+      },
+      "load_pretrained": true,
+      "pretrained_model_hashes": {
+        "grover_base": "ff420aea264fca7668ecb147f60762a1",
+        "jtvae": "a7060ac4e2c6154e64a13acd414cbba2",
+        "rdkit": "4f061dbfc7af05cf84f06a724b0c8563"
+      },
+      "pretrained_model_path": "project_folder/checkpoints"
+    },
+    "profiling": {
+      "outdir": "./",
+      "run_profiler": false
+    },
+    "training": {
+      "checkpoint_freq": 25,
+      "full_eval_during_train": false,
+      "max_minutes": 1200,
+      "num_epochs": 151,
+      "run_eval_disentangle": true,
+      "run_eval_logfold": false,
+      "run_eval_r2": true,
+      "run_eval_r2_sc": false,
+      "save_checkpoints": true,
+      "save_dir": "project_folder/checkpoints"
+    },
+    "seed": 14422334
+  },
+  "config_hash": "c30016a7469feb78a8ee9ebb18ed9b1f",
+  "experiment": {
+    "name": "seml_sweep_icb",
+    "base_dir": "/tmp/2f9f2384-180c-4ffb-a7b5-7be2dbaab854/chemCPA",
+    "sources": [
+      [
+        "__init__.py",
+        {
+          "$oid": "62813f738f4db23515bf1e68"
+        }
+      ],
+      [
+        "data.py",
+        {
+          "$oid": "62813f738f4db23515bf1e69"
+        }
+      ],
+      [
+        "embedding.py",
+        {
+          "$oid": "62813f738f4db23515bf1e6b"
+        }
+      ],
+      [
+        "model.py",
+        {
+          "$oid": "62813f738f4db23515bf1e6d"
+        }
+      ],
+      [
+        "profiling.py",
+        {
+          "$oid": "62813f738f4db23515bf1e6f"
+        }
+      ],
+      [
+        "seml_sweep_icb.py",
+        {
+          "$oid": "62813f738f4db23515bf1e71"
+        }
+      ],
+      [
+        "train.py",
+        {
+          "$oid": "62813f738f4db23515bf1e73"
+        }
+      ]
+    ],
+    "dependencies": [
+      "numpy==1.21.5",
+      "sacred==0.8.2",
+      "seml==0.3.5",
+      "torch==1.10.1"
+    ],
+    "repositories": [],
+    "mainfile": "seml_sweep_icb.py"
+  }
+},{
+  "_id": 496,
+  "config": {
+    "overwrite": 496,
+    "db_collection": "multi_task",
+    "dataset": {
+      "data_params": {
+        "covariate_keys": "cell_type",
+        "dataset_path": "project_folder/datasets/sciplex_complete_middle_subset_lincs_genes.h5ad",
+        "degs_key": "lincs_DEGs",
+        "dose_key": "dose",
+        "pert_category": "cov_drug_dose_name",
+        "perturbation_key": "condition",
+        "smiles_key": "SMILES",
+        "split_key": "split_ood_multi_task",
+        "use_drugs_idx": true
+      },
+      "dataset_type": "trapnell"
+    },
+    "model": {
+      "additional_params": {
+        "decoder_activation": "ReLU",
+        "doser_type": "amortized",
+        "multi_task": false,
+        "patience": 50,
+        "seed": 1337
+      },
+      "append_ae_layer": false,
+      "embedding": {
+        "directory": "project_folder/embeddings",
+        "model": "rdkit"
+      },
+      "hparams": {
+        "adversary_depth": 4,
+        "adversary_lr": 0.0003637458544013904,
+        "adversary_steps": 3,
+        "adversary_wd": 7.459343285726555e-7,
+        "adversary_width": 64,
+        "autoencoder_depth": 4,
+        "autoencoder_lr": 0.0005611516415334501,
+        "autoencoder_wd": 1.3292918943162187e-7,
+        "autoencoder_width": 256,
+        "batch_size": 128,
+        "dim": 32,
+        "dosers_depth": 3,
+        "dosers_lr": 0.0005611516415334501,
+        "dosers_wd": 1.3292918943162187e-7,
+        "dosers_width": 64,
+        "dropout": 0.262378,
+        "embedding_encoder_depth": 4,
+        "embedding_encoder_width": 128,
+        "penalty_adversary": 0.19906996673933372,
+        "reg_adversary": 3.9813993347866736,
+        "reg_adversary_cov": 11.844319751820388,
+        "reg_multi_task": 28.188664052384844,
+        "step_size_lr": 50
+      },
+      "load_pretrained": true,
+      "pretrained_model_hashes": {
+        "grover_base": "ff420aea264fca7668ecb147f60762a1",
+        "jtvae": "a7060ac4e2c6154e64a13acd414cbba2",
+        "rdkit": "4f061dbfc7af05cf84f06a724b0c8563"
+      },
+      "pretrained_model_path": "project_folder/checkpoints"
+    },
+    "profiling": {
+      "outdir": "./",
+      "run_profiler": false
+    },
+    "training": {
+      "checkpoint_freq": 25,
+      "full_eval_during_train": false,
+      "max_minutes": 1200,
+      "num_epochs": 151,
+      "run_eval_disentangle": true,
+      "run_eval_logfold": false,
+      "run_eval_r2": true,
+      "run_eval_r2_sc": false,
+      "save_checkpoints": true,
+      "save_dir": "project_folder/checkpoints"
+    },
+    "seed": 419139258
+  },
+  "config_hash": "c824e42f7ce751cf9a8ed26f0d9e0af7",
+  "experiment": {
+    "name": "seml_sweep_icb",
+    "base_dir": "/tmp/1adc75f2-50db-486b-a485-19f77836fc96/chemCPA",
+    "sources": [
+      [
+        "__init__.py",
+        {
+          "$oid": "62811e56a918f0d697cc7c59"
+        }
+      ],
+      [
+        "data.py",
+        {
+          "$oid": "62811e56a918f0d697cc7c5a"
+        }
+      ],
+      [
+        "embedding.py",
+        {
+          "$oid": "62811e56a918f0d697cc7c5c"
+        }
+      ],
+      [
+        "model.py",
+        {
+          "$oid": "62811e56a918f0d697cc7c5e"
+        }
+      ],
+      [
+        "profiling.py",
+        {
+          "$oid": "62811e56a918f0d697cc7c60"
+        }
+      ],
+      [
+        "seml_sweep_icb.py",
+        {
+          "$oid": "62811e56a918f0d697cc7c62"
+        }
+      ],
+      [
+        "train.py",
+        {
+          "$oid": "62811e56a918f0d697cc7c64"
+        }
+      ]
+    ],
+    "dependencies": [
+      "numpy==1.21.5",
+      "sacred==0.8.2",
+      "seml==0.3.5",
+      "torch==1.10.1"
+    ],
+    "repositories": [],
+    "mainfile": "seml_sweep_icb.py"
+  }
+},{
+  "_id": 690,
+  "config": {
+    "overwrite": 690,
+    "db_collection": "multi_task",
+    "dataset": {
+      "data_params": {
+        "covariate_keys": "cell_type",
+        "dataset_path": "project_folder/datasets/sciplex_complete_middle_subset.h5ad",
+        "degs_key": "all_DEGs",
+        "dose_key": "dose",
+        "pert_category": "cov_drug_dose_name",
+        "perturbation_key": "condition",
+        "smiles_key": "SMILES",
+        "split_key": "split_ood_multi_task",
+        "use_drugs_idx": true
+      },
+      "dataset_type": "trapnell"
+    },
+    "model": {
+      "additional_params": {
+        "decoder_activation": "ReLU",
+        "doser_type": "amortized",
+        "multi_task": false,
+        "patience": 50,
+        "seed": 1337
+      },
+      "append_ae_layer": true,
+      "embedding": {
+        "directory": "project_folder/embeddings",
+        "model": "rdkit"
+      },
+      "hparams": {
+        "adversary_depth": 3,
+        "adversary_lr": 0.00013102516275481272,
+        "adversary_steps": 3,
+        "adversary_wd": 8.111941985431936e-8,
+        "adversary_width": 128,
+        "autoencoder_depth": 4,
+        "autoencoder_lr": 0.0002310201887845291,
+        "autoencoder_wd": 3.5113563139704124e-8,
+        "autoencoder_width": 256,
+        "batch_size": 128,
+        "dim": 32,
+        "dosers_depth": 3,
+        "dosers_lr": 0.0002310201887845291,
+        "dosers_wd": 3.5113563139704124e-8,
+        "dosers_width": 64,
+        "dropout": 0.262378,
+        "embedding_encoder_depth": 4,
+        "embedding_encoder_width": 128,
+        "penalty_adversary": 0.09778325945801387,
+        "reg_adversary": 1.955665189160277,
+        "reg_adversary_cov": 7.599674150654904,
+        "reg_multi_task": 23.62574024071315,
+        "step_size_lr": 50
+      },
+      "load_pretrained": true,
+      "pretrained_model_hashes": {
+        "grover_base": "ff420aea264fca7668ecb147f60762a1",
+        "jtvae": "a7060ac4e2c6154e64a13acd414cbba2",
+        "rdkit": "4f061dbfc7af05cf84f06a724b0c8563"
+      },
+      "pretrained_model_path": "project_folder/checkpoints"
+    },
+    "profiling": {
+      "outdir": "./",
+      "run_profiler": false
+    },
+    "training": {
+      "checkpoint_freq": 25,
+      "full_eval_during_train": false,
+      "max_minutes": 1200,
+      "num_epochs": 151,
+      "run_eval_disentangle": true,
+      "run_eval_logfold": false,
+      "run_eval_r2": true,
+      "run_eval_r2_sc": false,
+      "save_checkpoints": true,
+      "save_dir": "project_folder/checkpoints"
+    },
+    "seed": 303995393
+  },
+  "config_hash": "dde01c1c58f398d524453c4b564a440f",
+  "experiment": {
+    "name": "seml_sweep_icb",
+    "base_dir": "/tmp/28e8e15b-45f3-40f4-903f-b4abb1e1cae7/chemCPA",
+    "sources": [
+      [
+        "__init__.py",
+        {
+          "$oid": "6281b135375125b65c84dbdd"
+        }
+      ],
+      [
+        "data.py",
+        {
+          "$oid": "6281b135375125b65c84dbde"
+        }
+      ],
+      [
+        "embedding.py",
+        {
+          "$oid": "6281b135375125b65c84dbe0"
+        }
+      ],
+      [
+        "model.py",
+        {
+          "$oid": "6281b135375125b65c84dbe2"
+        }
+      ],
+      [
+        "profiling.py",
+        {
+          "$oid": "6281b135375125b65c84dbe4"
+        }
+      ],
+      [
+        "seml_sweep_icb.py",
+        {
+          "$oid": "6281b135375125b65c84dbe6"
+        }
+      ],
+      [
+        "train.py",
+        {
+          "$oid": "6281b135375125b65c84dbe8"
+        }
+      ]
+    ],
+    "dependencies": [
+      "numpy==1.21.5",
+      "sacred==0.8.2",
+      "seml==0.3.5",
+      "torch==1.10.1"
+    ],
+    "repositories": [],
+    "mainfile": "seml_sweep_icb.py"
+  }
+},{
+  "_id": 809,
+  "config": {
+    "overwrite": 809,
+    "db_collection": "multi_task",
+    "dataset": {
+      "data_params": {
+        "covariate_keys": "cell_type",
+        "dataset_path": "project_folder/datasets/sciplex_complete_middle_subset.h5ad",
+        "degs_key": "all_DEGs",
+        "dose_key": "dose",
+        "pert_category": "cov_drug_dose_name",
+        "perturbation_key": "condition",
+        "smiles_key": "SMILES",
+        "split_key": "split_ood_multi_task",
+        "use_drugs_idx": true
+      },
+      "dataset_type": "trapnell"
+    },
+    "model": {
+      "additional_params": {
+        "decoder_activation": "ReLU",
+        "doser_type": "amortized",
+        "multi_task": false,
+        "patience": 50,
+        "seed": 1337
+      },
+      "append_ae_layer": true,
+      "embedding": {
+        "directory": "project_folder/embeddings",
+        "model": "jtvae"
+      },
+      "hparams": {
+        "adversary_depth": 4,
+        "adversary_lr": 0.00015401700264919835,
+        "adversary_steps": 3,
+        "adversary_wd": 1.1526449540315636e-7,
+        "adversary_width": 128,
+        "autoencoder_depth": 4,
+        "autoencoder_lr": 0.00026587543983272677,
+        "autoencoder_wd": 4.3352817949515724e-8,
+        "autoencoder_width": 256,
+        "batch_size": 128,
+        "dim": 32,
+        "dosers_depth": 2,
+        "dosers_lr": 0.00026587543983272677,
+        "dosers_wd": 4.3352817949515724e-8,
+        "dosers_width": 64,
+        "dropout": 0.262378,
+        "embedding_encoder_depth": 4,
+        "embedding_encoder_width": 256,
+        "penalty_adversary": 0.10943342660062642,
+        "reg_adversary": 2.188668532012528,
+        "reg_adversary_cov": 8.152843673110732,
+        "reg_multi_task": 24.295633253176874,
+        "step_size_lr": 50
+      },
+      "load_pretrained": true,
+      "pretrained_model_hashes": {
+        "grover_base": "ff420aea264fca7668ecb147f60762a1",
+        "jtvae": "a7060ac4e2c6154e64a13acd414cbba2",
+        "rdkit": "4f061dbfc7af05cf84f06a724b0c8563"
+      },
+      "pretrained_model_path": "project_folder/checkpoints"
+    },
+    "profiling": {
+      "outdir": "./",
+      "run_profiler": false
+    },
+    "training": {
+      "checkpoint_freq": 25,
+      "full_eval_during_train": false,
+      "max_minutes": 1200,
+      "num_epochs": 151,
+      "run_eval_disentangle": true,
+      "run_eval_logfold": false,
+      "run_eval_r2": true,
+      "run_eval_r2_sc": false,
+      "save_checkpoints": true,
+      "save_dir": "project_folder/checkpoints"
+    },
+    "seed": 934706417
+  },
+  "config_hash": "e4eac660c5830245f681ec3cc5099f21",
+  "experiment": {
+    "name": "seml_sweep_icb",
+    "base_dir": "/tmp/36e7593b-9df2-4059-b799-8d2bce35de8f/chemCPA",
+    "sources": [
+      [
+        "__init__.py",
+        {
+          "$oid": "62822682ad49c9e0c04588db"
+        }
+      ],
+      [
+        "data.py",
+        {
+          "$oid": "62822682ad49c9e0c04588dc"
+        }
+      ],
+      [
+        "embedding.py",
+        {
+          "$oid": "62822682ad49c9e0c04588de"
+        }
+      ],
+      [
+        "model.py",
+        {
+          "$oid": "62822682ad49c9e0c04588e0"
+        }
+      ],
+      [
+        "profiling.py",
+        {
+          "$oid": "62822682ad49c9e0c04588e2"
+        }
+      ],
+      [
+        "seml_sweep_icb.py",
+        {
+          "$oid": "62822682ad49c9e0c04588e4"
+        }
+      ],
+      [
+        "train.py",
+        {
+          "$oid": "62822682ad49c9e0c04588e6"
+        }
+      ]
+    ],
+    "dependencies": [
+      "numpy==1.21.5",
+      "sacred==0.8.2",
+      "seml==0.3.5",
+      "torch==1.10.1"
+    ],
+    "repositories": [],
+    "mainfile": "seml_sweep_icb.py"
+  }
+}]

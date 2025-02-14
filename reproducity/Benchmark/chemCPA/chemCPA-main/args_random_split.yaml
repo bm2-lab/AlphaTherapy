@@ -1,0 +1,73 @@
+profiling:
+  run_profiler: false
+  outdir: ./
+training:
+  checkpoint_freq: 1
+  num_epochs: 200
+  max_minutes: 12000
+  full_eval_during_train: false
+  run_eval_disentangle: false
+  run_eval_r2: true
+  run_eval_r2_sc: false
+  run_eval_logfold: false
+  save_checkpoints: true
+  save_dir: project_folder/checkpoints
+  file_name: output_random_split.pt
+dataset:
+  dataset_type: trapnell
+  data_params:
+    perturbation_key: condition
+    pert_category: cov_drug_dose_name
+    dose_key: dose_val
+    covariate_keys: cell_type
+    smiles_key: canonical_smiles
+    use_drugs_idx: true
+    split_key: AlphaTherapy_split
+    dataset_path: !!python/object/apply:pathlib.PosixPath
+    - /
+    - data
+    - sequential_data
+    - preprocessed_data_2025
+    - state_transition_model_benchmark
+    - chemCPA
+    - random_split.h5ad
+    degs_key: rank_genes_groups_cov
+model:
+  additional_params:
+    patience: 5
+    decoder_activation: linear
+    doser_type: amortized
+    multi_task: false
+    seed: 1337
+  embedding:
+    directory: project_folder/embeddings
+    model: rdkit
+  load_pretrained: false
+  pretrained_model_path: null
+  pretrained_model_hashes: null
+  hparams:
+    dim: 32
+    dosers_width: 64
+    dosers_depth: 1
+    dosers_lr: 0.000561
+    dosers_wd: 1.33e-07
+    dropout: 0.2
+    autoencoder_width: 256
+    autoencoder_depth: 4
+    autoencoder_lr: 0.00112
+    autoencoder_wd: 3.752056e-07
+    reg_multi_task: 0
+    adversary_width: 128
+    adversary_depth: 3
+    adversary_lr: 0.000806
+    adversary_wd: 4.0e-06
+    adversary_steps: 2
+    reg_adversary: 24.082073
+    reg_adversary_cov: 10
+    penalty_adversary: 3.35
+    batch_size: 128
+    step_size_lr: 100
+    embedding_encoder_width: 128
+    embedding_encoder_depth: 3
+  append_ae_layer: false
+  enable_cpa_mode: false
